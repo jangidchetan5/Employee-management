@@ -1,22 +1,31 @@
+<!-- NGX SPINNER  -->
+<ngx-spinner *ngIf="loader" type="square-jelly-box" size="large" color="white" >
+</ngx-spinner> 
+
 <div class='main_container'>
-    <img src="assets/RAD.jpg" alt="" width="290px" height="250px" >
-    <div class='signup' >
-        <h1>Signup</h1>
-        <input type="text" placeholder="First Name">
-        <input type="text" placeholder="Last Name">
-        <input type="number" placeholder="Mobile Number">
-        <div class='radio'>
-            Male <input type="radio" name='gender' checked>
-            Female <input type="radio" name='gender'>
+    <img src="assets/RAD.jpg" alt="" width="290px" height="250px">
+    <form  #myForm='ngForm'>
+        <div class='signup'>
+            <h1>Signup</h1>
+
+            <input type="text" placeholder="First Name" autocomplete="off" [(ngModel)]='registerEmployeeData.firstname' minlength="4" maxlength="15" name='firstname' id='firstname' required>
+            <input type="text" placeholder="Last Name" autocomplete="off" [(ngModel)]='registerEmployeeData.lastname' minlength="4" maxlength="15" name='lastname' id='lastname' required>
+            <input type="number" placeholder="Mobile Number" autocomplete="off" [(ngModel)]='registerEmployeeData.mobilenumber' name='mobilenumber' id='mobilenumber' required>
+            <!-- <div class='radio'>
+            Male <input type="radio" name='gender' value='Male' checked>
+            Female <input type="radio" name='gender' value='Female'>
+
+        </div> -->
+            <input type="email" placeholder="Email Address" autocomplete="off" [(ngModel)]='registerEmployeeData.emailaddress' name='emailaddress' id='emailaddress' required email>
+            <input type="password" placeholder="Password" autocomplete="off" [(ngModel)]='registerEmployeeData.password' minlength="6" maxlength="15" name='password' id='password' required>
+            <input type="password" placeholder=" Confirm Password" autocomplete="off"  [(ngModel)]='registerEmployeeData.confirmpassword' minlength="6" maxlength="15" name='confirmpassword' id='confirmpassword' required>
+
+            <!-- <input type="date" > -->
+            <button [disabled]="!myForm.valid" (click)='registeringEmployee(myForm)'>Submit</button>
+
+
+            <a routerLink="/login">Already have an account?</a>
 
         </div>
-        <input type="email" placeholder="Email Address">
-        <input type="password" placeholder="Password">
-        <input type="password" placeholder=" Confirm Password">
-      
-        <!-- <input type="date" > -->
-        <button>Submit</button>
-        <a routerLink="/login">Already have an account?</a>
-
-    </div>
+    </form>
 </div>

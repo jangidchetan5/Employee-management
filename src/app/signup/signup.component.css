@@ -53,3 +53,22 @@ width: 210px;
     /* text-decoration: none; */
     color: #1877f2;
 }
+
+
+
+button:disabled{
+    background-color: rgb(222 222 222);
+}
+
+button{
+    background-color: #1877f2;
+    color: #fff;
+    border: none;
+    width: 100px;
+    height: 23px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
