@@ -5,32 +5,58 @@ import { LoginComponent } from './login/login.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { SignupComponent } from './signup/signup.component';
 import { AuthGuard } from './auth.guard';
+import { HomeComponent } from './sidenav/home/home.component';
+
+// const routes: Routes = [
+  
+
+//   {
+//   path:'',
+  
+//   redirectTo:'login',
+//   pathMatch:'full'
+//   },
+
+
+//   {
+//     path:'login',
+//     component:LoginComponent
+//   },
+//   {
+//     path:'signup',
+//     component:SignupComponent
+//   },
+//   {
+//     path:'sidenav',
+//     component:SidenavComponent,
+//     canActivate:[AuthGuard]
+//   },
+ 
+//   {
+//     path:'home',
+//     component:HomeComponent,
+//     canActivate:[AuthGuard],
+    
+//   }
+ 
+ 
+// ];
 
 const routes: Routes = [
-  
+  { path: "", redirectTo: "login", pathMatch: "full" },
+  { path: "login", component: LoginComponent },
+  {path:'signup',component:SignupComponent},
+  {
+    path: "sidenav",
+    component: SidenavComponent,
+    canActivate:[AuthGuard],
 
-  {
-  path:'',
-  
-  redirectTo:'login',
-  pathMatch:'full'
-  },
+    children: [
+      { path: "", pathMatch: "full", redirectTo: "home" },
 
-
-  {
-    path:'login',
-    component:LoginComponent
+      { path: "home", component: HomeComponent },
+    ],
   },
-  {
-    path:'signup',
-    component:SignupComponent
-  },
-  {
-    path:'sidenav',
-    component:SidenavComponent,
-    canActivate:[AuthGuard]
-  }
- 
 ];
 
 @NgModule({

@@ -25,7 +25,12 @@ export class SignupComponent implements OnInit {
   }
   loader: boolean = false;
 
-  constructor(private employee1:EmployeeserviceService,private toaster:ToastrService,private _router:Router, private spinner: NgxSpinnerService) { }
+  constructor(private employee1:EmployeeserviceService,private toaster:ToastrService,private _router:Router, private spinner: NgxSpinnerService) { 
+    if(employee1.loggedIn1234()){
+      this._router.navigate(['/sidenav'])
+
+    }
+  }
 
   ngOnInit(): void {
   }
