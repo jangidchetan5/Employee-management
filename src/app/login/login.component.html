@@ -1,21 +1,23 @@
 <!-- NGX SPINNER  -->
-<ngx-spinner *ngIf="loader" type="square-jelly-box" size="large" color="white" >
-</ngx-spinner> 
+<ngx-spinner *ngIf="loader" type="square-jelly-box" size="large" color="white">
+</ngx-spinner>
 
 
 <div class='main_container'>
-    <img src="assets/undraw_Login_re_4vu2.svg" alt="" width="600px" height="500px" >
+    <img src="assets/undraw_Login_re_4vu2.svg" alt="" width="600px" height="500px">
     <form #myForm='ngForm'>
-    <div class='login' >
-        <h1>Login</h1>
-        <input type="email" placeholder="Email Address" autocomplete="off" [(ngModel)]='employeeData.emailaddress' name='emailaddress' id='emailaddress' required email>
-        <input type="password" placeholder="Password" autocomplete="off" [(ngModel)]='employeeData.password' minlength="6" maxlength="15" name='password' id='password' required>
-        <button [disabled]="!myForm.valid" (click)='login(myForm)'>Submit</button>
-       
-       <a routerLink="/signup">Signup</a>
-        <!-- <a routerLink="/sidenav">sidenav?</a> -->
+        <div class='login'>
+            <h1>Login</h1>
+            <input type="email" placeholder="Email Address" autocomplete="off" [(ngModel)]='employeeData.emailaddress'
+                name='emailaddress' id='emailaddress' required email>
+            <input type="password" placeholder="Password" autocomplete="off" [(ngModel)]='employeeData.password'
+                minlength="6" maxlength="15" name='password' id='password' required>
+            <button [disabled]="!myForm.valid" (click)='login(myForm)'>Submit</button>
 
-    </div>
-</form>
+            <a routerLink="/signup">Signup</a>
+            <!-- <a routerLink="/sidenav">sidenav?</a> -->
+
+        </div>
+    </form>
 </div>
-<h1>my Branch chetan</h1>
+<h2>ashish</h2>
