@@ -3,6 +3,8 @@ import { AuthService } from 'src/app/core/services/auth.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateDialogComponent } from './update-dialog/update-dialog.component';
+// import { ToastrService } from 'ngx-toastr';
+// import { NgxSpinner } from 'ngx-spinner';
 
 export interface PeriodicElement {
   firstName: string;
@@ -39,6 +41,11 @@ export class EmployeeListComponent implements OnInit {
   constructor(private service1:AuthService,public dialog:MatDialog) { }
 
   ngOnInit(): void {
+    this.getAllEmployee();
+   
+  }
+
+  getAllEmployee(){
     this.service1.getAllEmployeeService().subscribe((res:any)=>{
       console.log('chetan_response',res)
       this.ELEMENT_DATA = res;
@@ -52,7 +59,26 @@ export class EmployeeListComponent implements OnInit {
 
   openDialog(elem:any){
     // console.log("123")
-    this.dialog.open(UpdateDialogComponent,{data:{elem}})
+    this.dialog.open(UpdateDialogComponent,{data:{elem},disableClose: true})
+  }
+
+  deletingEmployee(id:any){
+
+    let a=confirm("Click on 'OK' to delete ,else Click on 'Cancel' ")
+    // console.log(id);
+    if(a){
+      this.service1.deletingEmployeeService(id).subscribe((res:any)=>{
+        console.log(res)
+        this.getAllEmployee();
+      },(err:any)=>{
+        console.log(err)
+      })
+
+    }else{
+      return;
+    }
+    
+
   }
 
 }

@@ -31,4 +31,10 @@ export class AuthService {
     let headers = new HttpHeaders().set("authorization", 'Bearer ' + token);
     return this.http.get(this.getAllEmployee,{headers});
   }
+
+  deletingEmployeeService(id1:any){
+    return this.http.delete(`http://localhost:8000/deleteEmployee/${id1}`)
+
+
+  }
 }
