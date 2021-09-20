@@ -1,0 +1,86 @@
+<div *ngIf="loader">
+  <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate" [fullScreen]="true">
+    <p style="color: white">Loading...</p>
+  </ngx-spinner>
+</div>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-lg-6 poster px-2">
+      <img src="../../../assets/img/logo.jpg" class="img-fluid" width="100px" height="100px" />
+    </div>
+    <div class="col-lg-6">
+      <h2>Signup</h2>
+
+      <form (ngSubmit)="submit()" [formGroup]="myForm" class="example-form">
+        <div class="row">
+          <div class="col-lg-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input matInput #input placeholder="Ex. abhisek" formControlName="firstName" required name="firstName" />
+            </mat-form-field>
+            <small class="text-danger" *ngIf="
+                !myForm.controls['firstName'].valid &&
+                myForm.controls['firstName'].touched
+              ">
+              firstName required</small>
+          </div>
+          <div class="col-lg-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input matInput #input placeholder="Ex. Singh" formControlName="lastName" required name="lastName" />
+            </mat-form-field>
+            <small class="text-danger" *ngIf="
+                !myForm.controls['lastName'].valid &&
+                myForm.controls['lastName'].touched
+              ">
+              lastName required</small>
+          </div>
+        </div>
+        <div class="example-container">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Mobile</mat-label>
+            <input type="tel" matInput #input maxlength="10" placeholder="mobile" formControlName="phone" required
+              name="phone" />
+          </mat-form-field>
+          <small class="text-danger" *ngIf="
+              !myForm.controls['phone'].valid &&
+              myForm.controls['phone'].touched
+            ">Phone Number not valid</small>
+        </div>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput placeholder="email" formControlName="email" required name="email" />
+        </mat-form-field>
+        <small class="text-danger" *ngIf="
+            !myForm.controls['email'].valid && myForm.controls['email'].touched
+          ">
+          email not valid</small>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="de45" formControlName="password" required name="password" />
+        </mat-form-field>
+        <small class="text-danger" *ngIf="
+            !myForm.controls['password'].valid &&
+            myForm.controls['password'].touched
+          ">
+          password too short</small>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label> Confirm Password</mat-label>
+          <input matInput placeholder="de45" formControlName="confirmPassword" required name="confirmPassword" />
+        </mat-form-field>
+        <small class="text-danger" *ngIf="
+            !myForm.controls['confirmPassword'].valid &&
+            myForm.controls['confirmPassword'].touched
+          ">
+          password too short</small>
+        <br />
+        <button [disabled]="!myForm.valid" mat-raised-button color="primary">
+          Signup
+        </button>
+      </form>
+
+      <a routerLink="/login">already have an account?</a>
+      <br />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div *ngIf="loader">
+  <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+  </ngx-spinner>
+</div>
+<div class="container py-5">
+
+  <div class="row">
+    <div class="col-lg-6 poster">
+      <img src="../../../assets/img/logo.jpg" class="img-fluid" width="100px" height="100px">
+    </div>
+    <div class="col-lg-6">
+
+      <h2>Login</h2>
+
+      <form (ngSubmit)=submit() [formGroup]="myForm" class="example-form">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="email" formControlName="email" required name="email">
+        </mat-form-field>
+        <small class="text-danger" *ngIf="!myForm.controls['email'].valid && myForm.controls['email'].touched">
+          <span *ngIf="myForm.controls['email'].errors?.required">email required</span>
+
+        </small>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput placeholder="de45" formControlName="password" required name="password">
+        </mat-form-field>
+        <small class="text-danger" *ngIf="!myForm.controls['password'].valid && myForm.controls['password'].touched">
+          <span *ngIf="myForm.controls['password'].errors?.required">password required</span>
+
+        </small>
+        <br>
+        <button type="submit" [disabled]="!myForm.valid" mat-raised-button color="primary">Login</button>
+      </form>
+
+      <a routerLink="/signup">Don't have an account?</a>
+      <br>
+
+    </div>
+  </div>
+</div>

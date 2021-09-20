@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "66563cd9-9cb2-4f26-ba84-cd284a89db5c"
+    "analytics": "0b61e54e-9328-4a74-ba2c-24c013ccc593"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angularApp": {
+    "employeeManagement": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angularApp",
+            "outputPath": "dist/employeeManagement",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angularApp:build:production"
+              "browserTarget": "employeeManagement:build:production"
             },
             "development": {
-              "browserTarget": "angularApp:build:development"
+              "browserTarget": "employeeManagement:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angularApp:build"
+            "browserTarget": "employeeManagement:build"
           }
         },
         "test": {
@@ -108,5 +108,5 @@
       }
     }
   },
-  "defaultProject": "angularApp"
+  "defaultProject": "employeeManagement"
 }
