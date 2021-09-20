@@ -1,0 +1,31 @@
+
+<form #myForm=ngForm>
+    <div class='main_div'>
+        <mat-form-field appearance="outline"  id='inp1'>
+            <mat-label>firstName</mat-label>
+            <input matInput [(ngModel)]='employee1.firstName' type="text" value='{{data.elem.firstName}}'
+                name='date' required autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline"  id='inp2'>
+            <mat-label>email</mat-label>
+            <input matInput [(ngModel)]='employee1.email' type="email" value='{{data.elem.email}}' name='desc' required  autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" id='inp3'>
+            <mat-label>phone</mat-label>
+            <input matInput  [(ngModel)]='employee1.phone' type="text" value='{{data.elem.phone}}'
+                name='name' required autocomplete="off">
+        </mat-form-field>
+
+      
+     <div class=btngroup>
+        
+        <button class='closebtn' mat-dialog-close>Close</button>
+        <button [disabled]="!myForm.valid" class='updatebtn' mat-dialog-close >Update</button>
+
+     </div>
+
+      
+    </div>
+</form>

@@ -17,13 +17,20 @@ import {MatListModule} from '@angular/material/list';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { EmployeeListComponent } from './components/sidebar/employee-list/employee-list.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UpdateDialogComponent } from './components/sidebar/employee-list/update-dialog/update-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    EmployeeListComponent,
+    UpdateDialogComponent
   ],
+  entryComponents:[UpdateDialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -43,6 +50,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
       progressBar: true,
       positionClass: 'toast-top-right',
     }),
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
