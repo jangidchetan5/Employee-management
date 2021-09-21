@@ -18,8 +18,20 @@ export class UpdateDialogComponent implements OnInit {
 
   employee1={
     firstName:this.data.elem.firstName,
+    lastName:this.data.elem.lastName,
     email:this.data.elem.email,
-    phone:this.data.elem.phone
+    phone:this.data.elem.phone,
+    areaOfWork:this.data.elem.areaOfWork,
+    role:this.data.elem.role
+  }
+
+  updatingEmployee(myForm:NgForm){
+    this.auth.updatingEmployeeService(this.data.elem._id, this.employee1).subscribe((res:any)=>{
+      console.log(res)
+    },(err:any)=>{
+      console.log(err)
+    })
+
   }
 
 }

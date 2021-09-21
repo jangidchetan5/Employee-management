@@ -10,9 +10,11 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav opened='true' mode='side' style='width: 200px; background-color: rgb(206, 206, 209);'>
     <mat-nav-list>
-      <a mat-list-item routerLink='/login'>Login</a>
-      <a mat-list-item routerLink='/signup'>Attendence</a>
-      <a mat-list-item routerLink="/employeelist">Employee List</a>
+      <!-- <a mat-list-item routerLink='/login'>Login</a>
+      <a mat-list-item routerLink='/signup'>Attendence</a> -->
+      <a mat-list-item (click)='auth.logout()'>Logout</a>
+      <a mat-list-item routerLink="/dashboard/employeelist">Employee List</a>
+      <a mat-list-item routerLink="/dashboard/holidays">Holidays</a>
 
     </mat-nav-list>
   </mat-sidenav>

@@ -4,25 +4,45 @@
         <mat-form-field appearance="outline"  id='inp1'>
             <mat-label>firstName</mat-label>
             <input matInput [(ngModel)]='employee1.firstName' type="text" value='{{data.elem.firstName}}'
-                name='date' required autocomplete="off">
+                name='firstName' required autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline"  id='inp1'>
+            <mat-label>lastName</mat-label>
+            <input matInput [(ngModel)]='employee1.lastName' type="text" value='{{data.elem.lastName}}'
+                name='lastName' required autocomplete="off">
         </mat-form-field>
 
         <mat-form-field appearance="outline"  id='inp2'>
             <mat-label>email</mat-label>
-            <input matInput [(ngModel)]='employee1.email' type="email" value='{{data.elem.email}}' name='desc' required  autocomplete="off">
+            <input matInput [(ngModel)]='employee1.email' type="email" value='{{data.elem.email}}' name='email' required  autocomplete="off">
         </mat-form-field>
 
         <mat-form-field appearance="outline" id='inp3'>
             <mat-label>phone</mat-label>
             <input matInput  [(ngModel)]='employee1.phone' type="text" value='{{data.elem.phone}}'
-                name='name' required autocomplete="off">
+                name='phone' required autocomplete="off">
         </mat-form-field>
+
+        <mat-form-field appearance="outline" id='inp3'>
+            <mat-label>areaofwork</mat-label>
+            <input matInput  [(ngModel)]='employee1.areaOfWork' type="text" value='{{data.elem.areaOfWork}}'
+                name='areaOfWork' required autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Select</mat-label>
+            <mat-select [(ngModel)]='employee1.role' name='role' value='{{data.elem.role}}'>
+              <mat-option value="user">user</mat-option>
+              <mat-option value="admin">admin</mat-option>
+            </mat-select>
+          </mat-form-field>
 
       
      <div class=btngroup>
         
         <button class='closebtn' mat-dialog-close>Close</button>
-        <button [disabled]="!myForm.valid" class='updatebtn' mat-dialog-close >Update</button>
+        <button (click)="updatingEmployee(myForm)" [disabled]="!myForm.valid" class='updatebtn' mat-dialog-close >Update</button>
 
      </div>
 

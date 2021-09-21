@@ -1,5 +1,48 @@
 table {
-    margin-top: 15px;
-    margin-left: 40px;
+    /* margin-top: 15px;
+    margin-left: 40px; */
+    margin: 0 auto;
     width: 90%;
   }
+
+  mat-icon{
+    cursor:pointer
+  }
+
+  .employeelist1{
+    /* border: 2px solid red; */
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+
+  .employeelist1 h2{
+    position: relative;
+    top: 7px;
+  }
+
+.addbtn{
+  border: none;
+  background-color: #1877f2;
+  color: #fff;
+  font-size: 13px;
+  width: 100px;
+  height: 32px;
+  border-radius: 5px;
+}
+
+.edit_icon:hover{
+  color: #1877f2;
+}
+
+.delete_icon:hover{
+  color: red;
+}
+
+
+
+

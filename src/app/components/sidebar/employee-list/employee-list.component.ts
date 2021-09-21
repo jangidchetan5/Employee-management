@@ -3,8 +3,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateDialogComponent } from './update-dialog/update-dialog.component';
-// import { ToastrService } from 'ngx-toastr';
-// import { NgxSpinner } from 'ngx-spinner';
+import { AddDialogComponent } from './add-dialog/add-dialog.component';
 
 export interface PeriodicElement {
   firstName: string;
@@ -13,18 +12,7 @@ export interface PeriodicElement {
   
 }
 
-// const ELEMENT_DATA: PeriodicElement[] = [
-//   { firstname: 'Hydrogen', email:'test@gmail.com',phone:123456},
-//   { firstname: 'Helium', email:'test@gmail.com' ,phone:123456},
-//   { firstname: 'Lithium', email:'test@gmail.com',phone:123456},
-//   { firstname: 'Beryllium', email:'test@gmail.com' ,phone:123456},
-//   { firstname: 'Boron', email:'test@gmail.com',phone:123456},
-//   { firstname: 'Carbon', email:'test@gmail.com' ,phone:123456},
-//   { firstname: 'Nitrogen', email:'test@gmail.com' ,phone:123456},
-//   { firstname: 'Oxygen', email:'test@gmail.com' ,phone:123456},
-//   { firstname: 'Fluorine', email:'test@gmail.com' ,phone:123456},
-//   { firstname: 'Neon' ,email:'test@gmail.com'  ,phone:123456},
-// ];
+
 
 
 @Component({
@@ -33,8 +21,8 @@ export interface PeriodicElement {
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
-  displayedColumns: string[] = ['firstName', 'email', 'phone', 'update','delete'];
-  // dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['firstName','lastName', 'email', 'phone','areaOfWork','role', 'action'];
+  
   ELEMENT_DATA: PeriodicElement[]=[]
   dataSource:any;
 
@@ -50,7 +38,7 @@ export class EmployeeListComponent implements OnInit {
       console.log('chetan_response',res)
       this.ELEMENT_DATA = res;
       this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
-      // console.log('hahaha123456',this.ELEMENT_DATA)
+    
      
     },(err:any)=>{
       console.log('chetan_error',err)
@@ -58,14 +46,14 @@ export class EmployeeListComponent implements OnInit {
   }
 
   openDialog(elem:any){
-    // console.log("123")
+   
     this.dialog.open(UpdateDialogComponent,{data:{elem},disableClose: true})
   }
 
   deletingEmployee(id:any){
 
     let a=confirm("Click on 'OK' to delete ,else Click on 'Cancel' ")
-    // console.log(id);
+    
     if(a){
       this.service1.deletingEmployeeService(id).subscribe((res:any)=>{
         console.log(res)
@@ -78,6 +66,11 @@ export class EmployeeListComponent implements OnInit {
       return;
     }
     
+
+  }
+
+  openDialogForAdd(){
+    this.dialog.open(AddDialogComponent)
 
   }
 

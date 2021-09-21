@@ -1,0 +1,40 @@
+table {
+    width: 90%;
+    margin: 10px auto;
+    
+
+
+  }
+
+  .holidays{
+    /* border: 2px solid red; */
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+
+  .holidays h2{
+    position: relative;
+    top: 7px;
+  }
+
+.addbtn12{
+    background-color: green;
+    color: #fff;
+    width: 140px;
+    height: 35px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+}
+
+.addbtn12 span{
+    position: relative;
+    top: 0.5px;
+}

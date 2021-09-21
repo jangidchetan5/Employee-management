@@ -55,6 +55,17 @@
             !myForm.controls['email'].valid && myForm.controls['email'].touched
           ">
           email not valid</small>
+
+
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Area Of Work</mat-label>
+            <input type="text" matInput placeholder="Area of work" formControlName="areaOfWork" required name="areaOfWork" />
+          </mat-form-field>
+          <small class="text-danger" *ngIf="
+              !myForm.controls['areaOfWork'].valid && myForm.controls['areaOfWork'].touched
+            ">
+            Area Of Work required</small>
+
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Password</mat-label>
           <input matInput placeholder="de45" formControlName="password" required name="password" />

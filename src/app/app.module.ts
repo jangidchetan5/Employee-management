@@ -21,6 +21,10 @@ import { EmployeeListComponent } from './components/sidebar/employee-list/employ
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UpdateDialogComponent } from './components/sidebar/employee-list/update-dialog/update-dialog.component';
+import { AddDialogComponent } from './components/sidebar/employee-list/add-dialog/add-dialog.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
+import { HolidaysComponent } from './components/sidebar/holidays/holidays.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,9 +32,11 @@ import { UpdateDialogComponent } from './components/sidebar/employee-list/update
     LoginComponent,
     SignupComponent,
     EmployeeListComponent,
-    UpdateDialogComponent
+    UpdateDialogComponent,
+    AddDialogComponent,
+    HolidaysComponent
   ],
-  entryComponents:[UpdateDialogComponent],
+  entryComponents:[UpdateDialogComponent,AddDialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -51,7 +57,9 @@ import { UpdateDialogComponent } from './components/sidebar/employee-list/update
       positionClass: 'toast-top-right',
     }),
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule,
+    MatOptionModule
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

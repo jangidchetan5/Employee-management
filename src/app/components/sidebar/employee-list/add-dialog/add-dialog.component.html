@@ -1,0 +1,63 @@
+<form #myForm=ngForm>
+    <div class='main_div'>
+        <mat-form-field appearance="outline" id='inp1'>
+            <mat-label>firstName</mat-label>
+            <input matInput [(ngModel)]='employee1.firstName' type="text" name='firstName' required autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" id='inp1'>
+            <mat-label>lastName</mat-label>
+            <input matInput [(ngModel)]='employee1.lastName' type="text" name='lastName' required autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" id='inp3'>
+            <mat-label>phone</mat-label>
+            <input matInput [(ngModel)]='employee1.phone' type="tel" name='phone' required autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" id='inp2'>
+            <mat-label>email</mat-label>
+            <input matInput [(ngModel)]='employee1.email' type="email" name='email' required autocomplete="off">
+        </mat-form-field>
+
+
+
+        <mat-form-field appearance="outline" id='inp3'>
+            <mat-label>areaofwork</mat-label>
+            <input matInput [(ngModel)]='employee1.areaOfWork' type="text" name='areaOfWork' required
+                autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Select</mat-label>
+            <mat-select [(ngModel)]='employee1.role' name='role'>
+              <mat-option value="user">user</mat-option>
+              <mat-option value="admin">admin</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        <mat-form-field appearance="outline" id='inp3'>
+            <mat-label>password</mat-label>
+            <input matInput [(ngModel)]='employee1.password' type="text" name='password' required
+                autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" id='inp3'>
+            <mat-label>confirm password</mat-label>
+            <input matInput [(ngModel)]='employee1.confirmPassword' type="text" name='confirmPassword' required
+                autocomplete="off">
+        </mat-form-field>
+
+
+        <div class=btngroup>
+
+            <button class='closebtn' mat-dialog-close>Close</button>
+            <button [disabled]="!myForm.valid" class='updatebtn' (click)='addingEmployee123()' mat-dialog-close>Add</button>
+
+        </div> 
+          
+          
+
+
+    </div>
+</form>
