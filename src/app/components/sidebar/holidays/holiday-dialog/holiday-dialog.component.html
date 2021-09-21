@@ -2,13 +2,13 @@
     <div class='main_div'>
         <mat-form-field appearance="outline" id='inp1'>
             <mat-label>Holiday Name</mat-label>
-            <input matInput [(ngModel)]='Holiday.holidayName' type="text" name='name' required
+            <input matInput [(ngModel)]='Holiday.name' type="text" name='name' required
                 autocomplete="off">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label>Select</mat-label>
-            <mat-select [(ngModel)]='Holiday.holidayDay' name='day'>
+            <mat-select [(ngModel)]='Holiday.day' name='day'>
                 <mat-option value="Sunday">Sunday</mat-option>
                 <mat-option value="Monday">Monday</mat-option>
                 <mat-option value="Tuesday">Tuesday</mat-option>
@@ -21,7 +21,7 @@
 
         <mat-form-field appearance="outline">
             <mat-label>Choose a date</mat-label>
-            <input matInput [matDatepicker]="picker" [(ngModel)]='Holiday.holidayDate' name='date'>
+            <input matInput [matDatepicker]="picker" [(ngModel)]='Holiday.date' name='date' required>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>

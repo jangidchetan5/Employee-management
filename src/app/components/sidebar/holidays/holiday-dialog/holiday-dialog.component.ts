@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/core/services/auth.service';
 import { HolidayService } from 'src/app/core/services/holiday.service';
 
 @Component({
@@ -9,15 +8,16 @@ import { HolidayService } from 'src/app/core/services/holiday.service';
 })
 export class HolidayDialogComponent implements OnInit {
   Holiday = {
-    holidayName: '',
-    holidayDay: '',
-    holidayDate: ''
+    name: '',
+    day: '',
+    date: ''
   }
 
-  constructor(private auth: AuthService, private holiday: HolidayService) { }
+  constructor( private holiday: HolidayService) { }
 
   ngOnInit(): void {
   }
+
   creatingHolidays12() {
     console.log(this.Holiday)
     this.holiday.creatingHoliday12Service(this.Holiday).subscribe((res: any) => {

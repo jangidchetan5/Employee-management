@@ -38,3 +38,19 @@ table {
     position: relative;
     top: 0.5px;
 }
+
+.edit_icon{
+  cursor: pointer;
+}
+
+.edit_icon:hover{
+  color: #1877f2;
+}
+
+.delete_icon{
+  cursor: pointer;
+}
+
+.delete_icon:hover{
+  color: red;
+}
