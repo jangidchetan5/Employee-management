@@ -1,0 +1,90 @@
+.main_div{
+    border: 1px solid rgb(139, 139, 139);
+    width: 320px;
+    height:520px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+mat-form-field{
+    width: 270px;
+}
+
+#inp1{
+    position: relative;
+    top: 20px;
+}
+
+#inp2{
+    position: relative;
+    top: 6px;
+}
+
+#inp3{
+    position: relative;
+    bottom: 8px;
+}
+
+#inp4{
+    position: relative;
+    bottom: 20px;
+}
+
+.btngroup{
+    /* border: 2px solid red; */
+    width: 270px;
+    height: 47px;
+    position: relative;
+    bottom: 21px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+button{
+    width: 90px;
+    height: 30px;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.updatebtn{
+    background-color: #1877f2;
+    transition: 1.5s all;
+}
+
+
+.closebtn{
+    background-color: rgb(253, 76, 76);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+button[disabled]{
+    background-color: rgb(226, 224, 224);
+}
+.check_circle{
+    font-size:17px;
+    position: relative;
+    top: 4px;
+    left: 4px;
+}
+
+.error{
+    font-size:20px;
+    position: relative;
+    top: 4px;
+    left: 4px;
+}
+
+
+
+
+
+

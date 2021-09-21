@@ -25,6 +25,9 @@ import { AddDialogComponent } from './components/sidebar/employee-list/add-dialo
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { HolidaysComponent } from './components/sidebar/holidays/holidays.component';
+import { HolidayDialogComponent } from './components/sidebar/holidays/holiday-dialog/holiday-dialog.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,9 +37,10 @@ import { HolidaysComponent } from './components/sidebar/holidays/holidays.compon
     EmployeeListComponent,
     UpdateDialogComponent,
     AddDialogComponent,
-    HolidaysComponent
+    HolidaysComponent,
+    HolidayDialogComponent
   ],
-  entryComponents:[UpdateDialogComponent,AddDialogComponent],
+  entryComponents:[UpdateDialogComponent,AddDialogComponent,HolidayDialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -59,7 +63,9 @@ import { HolidaysComponent } from './components/sidebar/holidays/holidays.compon
     MatTableModule,
     MatDialogModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
