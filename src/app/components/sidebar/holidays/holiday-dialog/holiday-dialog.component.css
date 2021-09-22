@@ -15,7 +15,7 @@ mat-form-field{
 
 
 .btngroup{
-    /* border: 2px solid red; */
+   
     width: 270px;
     height: 47px;
   
@@ -25,30 +25,6 @@ mat-form-field{
     justify-content: space-evenly;
 }
 
-button{
-    width: 90px;
-    height: 30px;
-    border: none;
-    color: #fff;
-    border-radius: 5px;
-}
-
-.updatebtn{
-    background-color: #1877f2;
-    transition: 1.5s all;
-}
-
-
-.closebtn{
-    background-color: rgb(253, 76, 76);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-button[disabled]{
-    background-color: rgb(226, 224, 224);
-}
 
 
 

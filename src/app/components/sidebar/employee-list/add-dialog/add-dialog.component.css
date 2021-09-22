@@ -23,14 +23,14 @@ mat-form-field{
     align-items: center;
     justify-content: space-evenly;
 }
-
+/* 
 button{
     width: 90px;
     height: 25px;
     border: none;
     color: #fff;
     border-radius: 5px;
-}
+} */
 
 .updatebtn{
     background-color: #1877f2;
@@ -47,9 +47,9 @@ button{
 }
 
 
-button[disabled]{
+/* button[disabled]{
   background-color: rgb(226, 224, 224);
-}
+} */
 
 .commondiv{
     /* border: 2px solid red; */

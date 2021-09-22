@@ -4,6 +4,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateDialogComponent } from './update-dialog/update-dialog.component';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
+import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 export interface PeriodicElement {
   firstName: string,
@@ -31,8 +33,8 @@ export class EmployeeListComponent implements OnInit {
   ELEMENT_DATA: PeriodicElement[] = []
   dataSource: any;
 
-  constructor(private service1: AuthService, public dialog: MatDialog) { }
-
+  constructor(private service1: AuthService, public dialog: MatDialog,private toaster:ToastrService,private spinner:NgxSpinnerService) { }
+  loader:boolean=false;
   ngOnInit(): void {
     this.getAllEmployee();
 
@@ -60,11 +62,33 @@ export class EmployeeListComponent implements OnInit {
     let a = confirm("Click on 'OK' to delete ,else Click on 'Cancel' ")
 
     if (a) {
+      this.loader=true;
+      this.spinner.show();
       this.service1.deletingEmployeeService(id).subscribe((res: any) => {
         console.log(res)
+        this.loader=false;
+        this.toaster.success("Deleted Successfully","Message",{
+          timeOut:3000,
+         
+          progressBar:true,
+          progressAnimation:'increasing',
+        
+         
+        });
+       
         this.getAllEmployee();
       }, (err: any) => {
+        this.loader=false;
         console.log(err)
+        this.toaster.error("Something Went Wrong","Error",{
+          timeOut:1000,
+         
+          progressBar:true,
+          progressAnimation:'increasing',
+          
+  
+         
+        })
       })
 
     } else {

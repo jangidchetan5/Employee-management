@@ -1,3 +1,7 @@
+<!-- NGX SPINNER  -->
+<ngx-spinner *ngIf="loader" type="square-jelly-box" size="large" color="white" >
+</ngx-spinner> 
+
 
 <form #myForm=ngForm>
     <div class='main_div'>
@@ -40,11 +44,9 @@
 
       
      <div class=btngroup>
-        
-        <button class='closebtn' mat-dialog-close>Close</button>
-        <button (click)="updatingEmployee(myForm)" [disabled]="!myForm.valid" class='updatebtn' mat-dialog-close >Update</button>
-
-     </div>
+        <button mat-raised-button mat-dialog-close color="warn">Close</button>
+        <button [disabled]="!myForm.valid" mat-raised-button color="primary" (click)="updatingEmployee(myForm)" mat-dialog-close>Update</button>
+    </div>
 
       
     </div>

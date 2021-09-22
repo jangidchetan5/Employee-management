@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -11,8 +11,8 @@ import { AuthService } from 'src/app/core/services/auth.service';
 export class AddDialogComponent implements OnInit {
  
 
-
-  constructor(private auth: AuthService, private _router: Router) { }
+  loader:boolean=false;
+  constructor(private auth: AuthService,private toaster:ToastrService,private spinner:NgxSpinnerService) { }
 
   ngOnInit(): void {
   }
@@ -30,11 +30,32 @@ export class AddDialogComponent implements OnInit {
   }
 
   addingEmployee123(){
-    // console.log(this.employee1)
+    this.loader=true;
+    this.spinner.show();
+   
     this.auth.adminAddingEmployee(this.employee1).subscribe((res:any)=>{
       console.log(res)
+      this.loader=false;
+      this.toaster.success("Added Successfully","Message",{
+        timeOut:3000,
+       
+        progressBar:true,
+        progressAnimation:'increasing',
+      
+       
+      });
     },(err:any)=>{
       console.log(err)
+      this.loader=false;
+      this.toaster.error("Something Went Wrong","Error",{
+        timeOut:1000,
+       
+        progressBar:true,
+        progressAnimation:'increasing',
+        
+
+       
+      })
     })
 
   }

@@ -1,6 +1,8 @@
 import { Component, OnInit,Inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 
 
 import { HolidayService } from 'src/app/core/services/holiday.service';
@@ -12,8 +14,10 @@ import { HolidayService } from 'src/app/core/services/holiday.service';
 })
 export class UpdateHolidayDialogComponent implements OnInit {
 
-  constructor(private holidayService:HolidayService,@Inject(MAT_DIALOG_DATA) public data:any) { }
+  constructor(private holidayService:HolidayService,@Inject(MAT_DIALOG_DATA) public data:any,private toaster:ToastrService,private spinner:NgxSpinnerService) { }
+  
 
+  loader:boolean=false;
   ngOnInit(): void {
   }
 
@@ -24,10 +28,31 @@ export class UpdateHolidayDialogComponent implements OnInit {
   }
 
   updatingHolidays(myForm1:NgForm){
+    this.loader=true;
+    this.spinner.show();
     this.holidayService.updatingHolidaysService(this.data.elem._id, this.holiday).subscribe((res:any)=>{
+      this.loader=false;
       console.log(res)
+      this.toaster.success("Updated successfully","Message",{
+        timeOut:3000,
+       
+        progressBar:true,
+        progressAnimation:'increasing',
+      
+       
+      });
     },(err:any)=>{
+      this.loader=false;
       console.log(err)
+      this.toaster.error("Something went wrong","Error",{
+        timeOut:1000,
+       
+        progressBar:true,
+        progressAnimation:'increasing',
+        
+
+       
+      })
     })
   }
 

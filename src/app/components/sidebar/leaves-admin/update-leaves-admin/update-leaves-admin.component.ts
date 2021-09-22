@@ -1,6 +1,8 @@
 import { Component, OnInit,Inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 import { LeaveAdminService } from 'src/app/core/services/leave-admin.service';
 
 
@@ -11,8 +13,9 @@ import { LeaveAdminService } from 'src/app/core/services/leave-admin.service';
 })
 export class UpdateLeavesAdminComponent implements OnInit {
 
-  constructor(private leavesAdmin:LeaveAdminService,@Inject(MAT_DIALOG_DATA) public data:any) { }
+  constructor(private leavesAdmin:LeaveAdminService,@Inject(MAT_DIALOG_DATA) public data:any,private toaster:ToastrService,private spinner:NgxSpinnerService) { }
 
+  loader:boolean=false;
   ngOnInit(): void {
   }
 
@@ -28,11 +31,31 @@ export class UpdateLeavesAdminComponent implements OnInit {
   }
 
   updatingLeavesAdmin(myForm1:NgForm){
-    // console.log("hello");
+     this.loader=true;
+     this.spinner.show();
     this.leavesAdmin.updatingLeavesAdminsService(this.data.elem._id, this.Leaves).subscribe((res:any)=>{
+      this.loader=false;
       console.log(res)
+      this.toaster.success("Updated successfully","Message",{
+        timeOut:3000,
+       
+        progressBar:true,
+        progressAnimation:'increasing',
+      
+       
+      });
     },(err:any)=>{
+      this.loader=false;
       console.log(err)
+      this.toaster.error('Something went wrong',"Error",{
+        timeOut:1000,
+       
+        progressBar:true,
+        progressAnimation:'increasing',
+        
+
+       
+      })
     })
 
   }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 import { LeaveAdminService } from 'src/app/core/services/leave-admin.service';
 import { AddLeavesAdminComponent } from './add-leaves-admin/add-leaves-admin.component';
 import { UpdateLeavesAdminComponent } from './update-leaves-admin/update-leaves-admin.component';
@@ -41,8 +43,10 @@ export class LeavesAdminComponent implements OnInit {
   ELEMENT_DATA: PeriodicElement[] = []
   dataSource: any;
 
+  loader:boolean=false;
 
-  constructor(private dialog:MatDialog,private leavesAdmin:LeaveAdminService) { }
+
+  constructor(private dialog:MatDialog,private leavesAdmin:LeaveAdminService,private toaster:ToastrService,private spinner:NgxSpinnerService) { }
 
   ngOnInit(): void {
     this.getAllLeavesAdmin()
@@ -71,15 +75,36 @@ export class LeavesAdminComponent implements OnInit {
   }
 
   deletingLeavesAdmin(id:any){
-    // console.log(id);
+   
     let a = confirm("Click on 'OK' to delete ,else Click on 'Cancel' ")
 
     if (a) {
+      this.loader=true;
+      this.spinner.show();
       this.leavesAdmin.deletingLeavesAdminService(id).subscribe((res: any) => {
-        console.log(res)
+        this.loader=false;
+      console.log(res)
+      this.toaster.success("Deleted successfully","Message",{
+        timeOut:3000,
+       
+        progressBar:true,
+        progressAnimation:'increasing',
+      
+       
+      });
         this.getAllLeavesAdmin()
       }, (err: any) => {
-        console.log(err)
+        this.loader=false;
+      console.log(err)
+      this.toaster.error('Something went wrong',"Error",{
+        timeOut:1000,
+       
+        progressBar:true,
+        progressAnimation:'increasing',
+        
+
+       
+      })
       })
 
     } else {

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 
 import { HolidayService } from 'src/app/core/services/holiday.service';
 import { HolidayDialogComponent } from './holiday-dialog/holiday-dialog.component';
@@ -22,10 +24,11 @@ export class HolidaysComponent implements OnInit {
   displayedColumns: string[] = ['holidayName', 'holidayDay', 'holidayDate', 'action'];
   ELEMENT_DATA: PeriodicElement[] = []
   dataSource: any;
+  loader:boolean=false;
 
 
 
-  constructor(private dialog: MatDialog, private holiday: HolidayService) { }
+  constructor(private dialog: MatDialog, private holiday: HolidayService,private toaster:ToastrService,private spinner:NgxSpinnerService) { }
 
   ngOnInit(): void {
     this.getAllHoliday()
@@ -54,11 +57,31 @@ export class HolidaysComponent implements OnInit {
     let a = confirm("Click on 'OK' to delete ,else Click on 'Cancel' ")
 
     if (a) {
+      this.loader=true;
+      this.spinner.show();
       this.holiday.deletingHolidayService(id).subscribe((res: any) => {
+        this.loader=false;
         console.log(res)
+        this.toaster.success("Deleted successfully","Message",{
+          timeOut:3000,
+         
+          progressBar:true,
+          progressAnimation:'increasing',
+        
+         
+        });
         this.getAllHoliday();
       }, (err: any) => {
         console.log(err)
+       this.toaster.error('Something went wrong',"Error",{
+        timeOut:1000,
+       
+        progressBar:true,
+        progressAnimation:'increasing',
+        
+
+       
+      })
       })
 
     } else {
