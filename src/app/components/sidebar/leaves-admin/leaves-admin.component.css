@@ -1,0 +1,21 @@
+table {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .holidays{
+    /* border: 2px solid red; */
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+
+  .holidays h2{
+    position: relative;
+    top: 7px;
+  }
+

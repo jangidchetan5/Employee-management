@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { EmployeeListComponent } from "./components/sidebar/employee-list/employee-list.component";
 import { HolidaysComponent } from "./components/sidebar/holidays/holidays.component";
+import { LeavesAdminComponent } from "./components/sidebar/leaves-admin/leaves-admin.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { AuthGuard } from "./core/guards/auth.guard";
 import { LoginComponent } from "./pages/login/login.component";
@@ -20,7 +21,8 @@ const routes: Routes = [
 
       { path: "signup", component: SignupComponent },
       {path:"employeelist",component:EmployeeListComponent},
-      {path:"holidays",component:HolidaysComponent}
+      {path:"holidays",component:HolidaysComponent},
+      {path:"leavesadmin",component:LeavesAdminComponent}
     ],
   },
 ];

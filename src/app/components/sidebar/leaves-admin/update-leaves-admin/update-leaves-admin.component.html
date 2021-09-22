@@ -1,0 +1,81 @@
+<form #myForm=ngForm>
+    <div class='main_div'>
+
+        <div class='commondiv'>
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput [(ngModel)]='Leaves.name' type="text" name='name' required
+                    autocomplete="off">
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Leave Type</mat-label>
+                <input matInput [(ngModel)]='Leaves.leavetype' type="text" name='leavetype' required
+                    autocomplete="off">
+            </mat-form-field>
+    
+
+        </div>
+
+        <div class='commondiv'>
+            <mat-form-field appearance="outline">
+                <mat-label>From</mat-label>
+                <input matInput [matDatepicker]="picker1" [(ngModel)]='Leaves.from' name='from' required>
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+                <mat-label>To</mat-label>
+                <input matInput [matDatepicker]="picker2" [(ngModel)]='Leaves.to' name='to' required>
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+
+        </div>
+
+
+        <div class='commondiv'>
+            <mat-form-field appearance="outline">
+                <mat-label>No Of Days</mat-label>
+                <input matInput [(ngModel)]='Leaves.noofdays' type="text" name='noofdays' required
+                    autocomplete="off">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Reason</mat-label>
+                <input matInput [(ngModel)]='Leaves.reason' type="text" name='reason' required
+                    autocomplete="off">
+            </mat-form-field>
+
+        </div>
+
+        <div class='commondiv'>
+            <mat-form-field appearance="outline">
+                <mat-label>Status</mat-label>
+                <mat-select [(ngModel)]='Leaves.status' name='status'>
+                   
+                    <mat-option value="New">New</mat-option>
+                    <mat-option value="Pending">Pending</mat-option>
+                    <mat-option value="Approved">Approved</mat-option>
+                    <mat-option value="Declined">Declined</mat-option>
+                   
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+    
+    
+           
+
+      
+
+       
+<div class=btngroup>
+
+            <button class='closebtn' mat-dialog-close>Close</button>
+            <button (click)='updatingLeavesAdmin(myForm)' [disabled]="!myForm.valid" class='updatebtn' mat-dialog-close>Update</button>
+
+        </div>
+    </div>
+</form>
