@@ -115,4 +115,9 @@ export class LeavesAdminComponent implements OnInit {
 
   }
 
+  applyFilter(event:any){
+    this.dataSource.filter=event.target.value.trim().toLowerCase();
+
+  }
+
 }

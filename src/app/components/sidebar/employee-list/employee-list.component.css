@@ -9,6 +9,13 @@ table {
     cursor:pointer
   }
 
+  .filterInput{
+    width:90%;
+    margin: 5px auto !important;
+    position: relative;
+    left: 58px;
+  }
+
   .employeelist1{
     /* border: 2px solid red; */
     width: 90%;
@@ -42,6 +49,7 @@ table {
 .delete_icon:hover{
   color: red;
 }
+
 
 
 

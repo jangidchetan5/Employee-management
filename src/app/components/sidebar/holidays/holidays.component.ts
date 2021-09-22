@@ -96,4 +96,9 @@ export class HolidaysComponent implements OnInit {
 
   }
 
+  applyFilter(event:any){
+    this.dataSource.filter=event.target.value.trim().toLowerCase();
+
+  }
+
 }

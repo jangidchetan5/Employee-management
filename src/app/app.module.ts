@@ -32,6 +32,7 @@ import { UpdateHolidayDialogComponent } from './components/sidebar/holidays/upda
 import { LeavesAdminComponent } from './components/sidebar/leaves-admin/leaves-admin.component';
 import { UpdateLeavesAdminComponent } from './components/sidebar/leaves-admin/update-leaves-admin/update-leaves-admin.component';
 import { AddLeavesAdminComponent } from './components/sidebar/leaves-admin/add-leaves-admin/add-leaves-admin.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,6 +75,8 @@ import { AddLeavesAdminComponent } from './components/sidebar/leaves-admin/add-l
     MatOptionModule,
     MatDatepickerModule,
     MatNativeDateModule
+   
+
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

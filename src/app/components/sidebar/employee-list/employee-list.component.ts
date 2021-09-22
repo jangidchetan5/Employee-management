@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
@@ -6,6 +6,7 @@ import { UpdateDialogComponent } from './update-dialog/update-dialog.component';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from 'ngx-spinner';
+
 
 export interface PeriodicElement {
   firstName: string,
@@ -32,17 +33,24 @@ export class EmployeeListComponent implements OnInit {
 
   ELEMENT_DATA: PeriodicElement[] = []
   dataSource: any;
+  
 
-  constructor(private service1: AuthService, public dialog: MatDialog,private toaster:ToastrService,private spinner:NgxSpinnerService) { }
+  constructor(private service1: AuthService, public dialog: MatDialog,private toaster:ToastrService,private spinner:NgxSpinnerService) { 
+    
+  }
   loader:boolean=false;
   ngOnInit(): void {
+     
     this.getAllEmployee();
+   
+    
 
   }
 
   getAllEmployee() {
     this.service1.getAllEmployeeService().subscribe((res: any) => {
       console.log('chetan_response', res)
+      this.dataSource=res;
       this.ELEMENT_DATA = res;
       this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
 
@@ -100,6 +108,11 @@ export class EmployeeListComponent implements OnInit {
 
   openDialogForAdd() {
     this.dialog.open(AddDialogComponent)
+
+  }
+
+  applyFilter(event:any){
+    this.dataSource.filter=event.target.value.trim().toLowerCase();
 
   }
 

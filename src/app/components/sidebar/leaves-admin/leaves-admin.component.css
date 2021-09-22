@@ -3,6 +3,14 @@ table {
     margin: 10px auto;
   }
 
+  .filterInput{
+    width:90%;
+    margin: 5px auto !important;
+    position: relative;
+    left: 58px;
+  }
+
+
   .holidays{
     /* border: 2px solid red; */
     width: 90%;
