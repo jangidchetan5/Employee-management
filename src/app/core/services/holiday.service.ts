@@ -30,4 +30,11 @@ export class HolidayService {
 
   }
 
+  updatingHolidaysService(id:any,holidays12:any){
+    let token=localStorage.getItem('token');
+    let headers = new HttpHeaders().set("authorization", 'Bearer ' + token);
+    return this.http.patch(`http://localhost:8000/updateHoliday/${id}`,holidays12,{headers})
+
+  }
+
 }

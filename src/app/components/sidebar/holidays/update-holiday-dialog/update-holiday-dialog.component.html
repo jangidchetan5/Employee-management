@@ -1,0 +1,33 @@
+<form #myForm=ngForm>
+    <div class='main_div'>
+        <mat-form-field appearance="outline">
+            <mat-label>name</mat-label>
+            <input matInput [(ngModel)]='holiday.name' type="text" value='{{data.elem.name}}' name='name' required
+                autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>day</mat-label>
+            <input matInput [(ngModel)]='holiday.day' type="text" value='{{data.elem.day}}' name='day' required
+                autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>date</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]='holiday.date' name='date' required value='{{data.elem.date}}'>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+
+        <div class=btngroup>
+
+            <button class='closebtn' mat-dialog-close>Close</button>
+            <button (click)='updatingHolidays(myForm)' [disabled]="!myForm.valid" class='updatebtn'
+                mat-dialog-close>Update</button>
+
+        </div>
+
+
+    </div>
+</form>
