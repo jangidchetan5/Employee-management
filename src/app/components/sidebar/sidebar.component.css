@@ -1,0 +1,8 @@
+mat-expansion-panel{
+    background-color: rgb(206, 206, 209) !important;
+}
+
+.logout_anchor{
+    position: relative;
+    left: 8px;
+}

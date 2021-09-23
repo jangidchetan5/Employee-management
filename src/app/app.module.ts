@@ -38,6 +38,7 @@ import { UpdateDepartmentComponent } from './components/sidebar/departments/upda
 import { DesignationsComponent } from './components/sidebar/designations/designations.component';
 import { AddDesignationsComponent } from './components/sidebar/designations/add-designations/add-designations.component';
 import { UpdateDesignationsComponent } from './components/sidebar/designations/update-designations/update-designations.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { UpdateDesignationsComponent } from './components/sidebar/designations/u
     MatSelectModule,
     MatOptionModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatExpansionModule
    
 
   ],
