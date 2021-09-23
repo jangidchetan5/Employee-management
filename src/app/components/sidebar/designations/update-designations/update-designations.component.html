@@ -1,0 +1,41 @@
+<!-- NGX SPINNER  -->
+<ngx-spinner *ngIf="loader" type="square-jelly-box" size="large" color="white" >
+</ngx-spinner> 
+
+<form #myForm=ngForm>
+    <div class='main_div'>
+        <mat-form-field appearance="outline">
+            <mat-label>Number</mat-label>
+            <input matInput [(ngModel)]='Designation.number' type="text" value='{{data.elem.number}}' name='number' required
+                autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Designations Name</mat-label>
+            <input matInput [(ngModel)]='Designation.designationsname' type="text" value='{{data.elem.designationsname}}' name='designationsname' required
+                autocomplete="off">
+        </mat-form-field>
+
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Department Name</mat-label>
+            <mat-select [(ngModel)]='Designation.departmentname' name='departmentname'>
+                <mat-option value='{{item.departmentname}}' *ngFor='let item of arr1'>{{item.departmentname}}</mat-option>
+               
+            </mat-select>
+        </mat-form-field>
+
+       
+
+
+        <div class=btngroup>
+            <button mat-raised-button mat-dialog-close color="warn">Close</button>
+            <button (click)='updatingDesignations(myForm)' [disabled]="!myForm.valid" mat-raised-button color="primary" mat-dialog-close>Update</button> 
+
+          
+
+        </div>
+
+
+    </div>
+</form>

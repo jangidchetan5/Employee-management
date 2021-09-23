@@ -1,5 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { DepartmentsComponent } from "./components/sidebar/departments/departments.component";
+import { DesignationsComponent } from "./components/sidebar/designations/designations.component";
 import { EmployeeListComponent } from "./components/sidebar/employee-list/employee-list.component";
 import { HolidaysComponent } from "./components/sidebar/holidays/holidays.component";
 import { LeavesAdminComponent } from "./components/sidebar/leaves-admin/leaves-admin.component";
@@ -22,7 +24,9 @@ const routes: Routes = [
       { path: "signup", component: SignupComponent },
       {path:"employeelist",component:EmployeeListComponent},
       {path:"holidays",component:HolidaysComponent},
-      {path:"leavesadmin",component:LeavesAdminComponent}
+      {path:"leavesadmin",component:LeavesAdminComponent},
+      {path:'departments',component:DepartmentsComponent},
+      {path:'designations',component:DesignationsComponent}
     ],
   },
 ];

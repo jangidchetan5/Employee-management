@@ -1,0 +1,46 @@
+table {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .designations{
+    /* border: 2px solid red; */
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+
+  .designations h2{
+    position: relative;
+    top: 7px;
+  }
+
+
+  .filterInput{
+    width:90%;
+    margin: 5px auto !important;
+    position: relative;
+    left: 58px;
+  }
+
+  
+
+  .edit_icon{
+    cursor: pointer;
+  }
+
+  .edit_icon:hover{
+    color: #1877f2;
+  }
+  
+  .delete_icon{
+    cursor: pointer;
+  }
+
+  .delete_icon:hover{
+    color: red;
+  }

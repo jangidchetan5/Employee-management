@@ -32,6 +32,12 @@ import { UpdateHolidayDialogComponent } from './components/sidebar/holidays/upda
 import { LeavesAdminComponent } from './components/sidebar/leaves-admin/leaves-admin.component';
 import { UpdateLeavesAdminComponent } from './components/sidebar/leaves-admin/update-leaves-admin/update-leaves-admin.component';
 import { AddLeavesAdminComponent } from './components/sidebar/leaves-admin/add-leaves-admin/add-leaves-admin.component';
+import { DepartmentsComponent } from './components/sidebar/departments/departments.component';
+import { AddDepartmentComponent } from './components/sidebar/departments/add-department/add-department.component';
+import { UpdateDepartmentComponent } from './components/sidebar/departments/update-department/update-department.component';
+import { DesignationsComponent } from './components/sidebar/designations/designations.component';
+import { AddDesignationsComponent } from './components/sidebar/designations/add-designations/add-designations.component';
+import { UpdateDesignationsComponent } from './components/sidebar/designations/update-designations/update-designations.component';
 
 @NgModule({
   declarations: [
@@ -47,9 +53,15 @@ import { AddLeavesAdminComponent } from './components/sidebar/leaves-admin/add-l
     UpdateHolidayDialogComponent,
     LeavesAdminComponent,
     UpdateLeavesAdminComponent,
-    AddLeavesAdminComponent
+    AddLeavesAdminComponent,
+    DepartmentsComponent,
+    AddDepartmentComponent,
+    UpdateDepartmentComponent,
+    DesignationsComponent,
+    AddDesignationsComponent,
+    UpdateDesignationsComponent
   ],
-  entryComponents:[UpdateDialogComponent,AddDialogComponent,HolidayDialogComponent,UpdateHolidayDialogComponent,UpdateLeavesAdminComponent,AddLeavesAdminComponent],
+  entryComponents:[UpdateDialogComponent,AddDialogComponent,HolidayDialogComponent,UpdateHolidayDialogComponent,UpdateLeavesAdminComponent,AddLeavesAdminComponent,AddDepartmentComponent,UpdateDepartmentComponent,AddDesignationsComponent,UpdateDesignationsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
