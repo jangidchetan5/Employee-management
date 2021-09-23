@@ -1,14 +1,19 @@
 <!-- NGX SPINNER  -->
-<ngx-spinner *ngIf="loader" type="square-jelly-box" size="large" color="white" >
-</ngx-spinner> 
+<ngx-spinner *ngIf="loader" type="square-jelly-box" size="large" color="white">
+</ngx-spinner>
 
 <form #myForm=ngForm>
     <div class='main_div'>
 
         <div class='commondiv'>
+
+
             <mat-form-field appearance="outline">
                 <mat-label>Name</mat-label>
-                <input matInput [(ngModel)]='Leaves.name' type="text" name='name' required autocomplete="off">
+                <mat-select [(ngModel)]='Leaves.name' name='name'>
+                    <mat-option value='{{item.firstName}}' *ngFor='let item of arr1'>{{item.firstName}}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
@@ -76,7 +81,7 @@
             <button [disabled]="!myForm.valid" mat-raised-button color="primary" (click)='updatingLeavesAdmin(myForm)'
                 mat-dialog-close>Update</button>
 
-          
+
 
         </div>
     </div>

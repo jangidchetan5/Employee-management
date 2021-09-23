@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { LeaveAdminService } from 'src/app/core/services/leave-admin.service';
 
 
@@ -13,10 +14,17 @@ import { LeaveAdminService } from 'src/app/core/services/leave-admin.service';
 })
 export class UpdateLeavesAdminComponent implements OnInit {
 
-  constructor(private leavesAdmin:LeaveAdminService,@Inject(MAT_DIALOG_DATA) public data:any,private toaster:ToastrService,private spinner:NgxSpinnerService) { }
+  constructor(private leavesAdmin:LeaveAdminService,@Inject(MAT_DIALOG_DATA) public data:any,private toaster:ToastrService,private spinner:NgxSpinnerService,private auth:AuthService) { }
+  arr1:any=[]
 
   loader:boolean=false;
   ngOnInit(): void {
+    this.auth.getAllEmployeeService().subscribe((res:any)=>{
+      console.log(res)
+      this.arr1=res;
+    },(err:any)=>{
+      console.log(err)
+    })
   }
 
   Leaves={
