@@ -1,4 +1,4 @@
-.poster{
+/* .poster{
     background: url(../../../assets/img/signup.png) center center no-repeat;
     background-size: 90% 90%;
      
@@ -12,4 +12,62 @@
   .example-full-width {
     width: 100%;
   }
- 
+  */
+
+  .mainContainer{
+    /* border: 2px solid red; */
+    width: 450px;
+    /* height: 100vh; */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .logoContainer{
+    /* border: 2px solid green; */
+    width: 100%;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .signupContainer{
+    /* border: 2px solid blue; */
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  }
+
+  .commonDiv{
+    /* border: 2px solid yellowgreen; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+
+  mat-form-field{
+    position: relative;
+    top: 10px;
+
+  }
+  h2{
+    font-size: 30px;
+  }
+  
+  h3{
+    position: relative;
+    bottom: 22px;
+    font-size: 15px;
+  }
+
