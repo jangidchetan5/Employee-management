@@ -7,12 +7,11 @@ table {
   }
 
   .filterInput{
-    width:90%;
+    width:19% ;
     margin: 5px auto !important;
     position: relative;
     left: 58px;
   }
-
   .holidays{
     /* border: 2px solid red; */
     width: 90%;

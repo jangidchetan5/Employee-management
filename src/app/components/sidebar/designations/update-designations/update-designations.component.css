@@ -1,7 +1,7 @@
 .main_div{
     border: 1px solid rgb(139, 139, 139);
-    width: 520px;
-    height:520px;
+    width: 360px;
+    height:360px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -10,13 +10,13 @@
 }
 
 mat-form-field{
-    width: 200px;
+    width: 280px;
     height: 25px;
 }
 
 
 .btngroup{
-    width: 200px;
+    width: 280px;
     height: 40px;
     display: flex;
     flex-direction: row;
