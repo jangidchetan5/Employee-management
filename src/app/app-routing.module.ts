@@ -20,15 +20,15 @@ const routes: Routes = [
     component: SidebarComponent,
 
     children: [
-      { path: "", pathMatch: "full", redirectTo: "signup" },
+      { path: "", pathMatch: "full", component:EmployeeListComponent,canActivate:[AuthGuard] },
 
-      { path: "signup", component: SignupComponent },
-      {path:"employeelist",component:EmployeeListComponent},
-      {path:"holidays",component:HolidaysComponent},
-      {path:"leavesadmin",component:LeavesAdminComponent},
-      {path:'departments',component:DepartmentsComponent},
-      {path:'designations',component:DesignationsComponent},
-      {path:'timesheet',component:TimesheetComponent}
+      // { path: "signup", component: SignupComponent },
+      {path:"employeelist",component:EmployeeListComponent,canActivate:[AuthGuard]},
+      {path:"holidays",component:HolidaysComponent,canActivate:[AuthGuard]},
+      {path:"leavesadmin",component:LeavesAdminComponent,canActivate:[AuthGuard]},
+      {path:'departments',component:DepartmentsComponent,canActivate:[AuthGuard]},
+      {path:'designations',component:DesignationsComponent,canActivate:[AuthGuard]},
+      {path:'timesheet',component:TimesheetComponent,canActivate:[AuthGuard]}
     ],
   },
 ];

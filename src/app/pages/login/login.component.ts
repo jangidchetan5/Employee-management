@@ -23,6 +23,10 @@ export class LoginComponent implements OnInit {
       email: new FormControl("", [Validators.required]),
       password: new FormControl("", [Validators.required]),
     });
+
+    if(this.authServe.loggedIn()){
+      this.route.navigate(['/dashboard/employeelist'])
+    }
   }
 
   ngOnInit(): void {}
@@ -34,7 +38,7 @@ export class LoginComponent implements OnInit {
       (res: any) => {
         this.loader = false;
         localStorage.setItem("token", res.token);
-        this.route.navigate(["/dashboard"]);
+        this.route.navigate(["/dashboard/employeelist"]);
       },
       (err) => {
         this.loader = false;

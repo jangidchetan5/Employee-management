@@ -23,7 +23,7 @@ export class SignupComponent implements OnInit {
       firstName: new FormControl('', [Validators.required]),
       lastName: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      areaOfWork:new FormControl('',[Validators.required]),
+      areaOfWork: new FormControl('', [Validators.required]),
       phone: new FormControl('', [
         Validators.required,
         Validators.minLength(10),
@@ -37,9 +37,13 @@ export class SignupComponent implements OnInit {
         Validators.minLength(6),
       ]),
     });
+
+    if(this.authServe.loggedIn()){
+      this.route.navigate(['/dashboard/employeelist'])
+    }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
   //submit method
   submit() {
     this.loader = true;
@@ -48,7 +52,7 @@ export class SignupComponent implements OnInit {
       (res) => {
         this.loader = false;
         this.toastr.success('Account Created', 'message');
-        this.route.navigate(['/login']);
+        this.route.navigate(['/dashboard/employeelist']);
       },
       (err) => {
         //for mongo error
