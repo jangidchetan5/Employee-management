@@ -12,54 +12,54 @@ import { LeaveAdminService } from 'src/app/core/services/leave-admin.service';
 })
 export class AddLeavesAdminComponent implements OnInit {
 
-  constructor(private auth:AuthService,private leavesAdmin:LeaveAdminService,private spinner:NgxSpinnerService,private toaster:ToastrService) { }
-  arr1:any=[];
-  loader:boolean=false;
+  constructor(private auth: AuthService, private leavesAdmin: LeaveAdminService, private spinner: NgxSpinnerService, private toaster: ToastrService) { }
+  arr1: any = [];
+  loader: boolean = false;
 
   ngOnInit(): void {
-    this.auth.getAllEmployeeService().subscribe((res:any)=>{
+    this.auth.getAllEmployeeService().subscribe((res: any) => {
       console.log(res)
-      this.arr1=res;
-    },(err:any)=>{
+      this.arr1 = res;
+    }, (err: any) => {
       console.log(err)
     })
   }
 
-  Leaves={
-    name:'',
-    leavetype:'',
-    from:'',
-    to:'',
-    noofdays:'',
-    reason:'',
-    status:''
+  Leaves = {
+    name: '',
+    leavetype: '',
+    from: '',
+    to: '',
+    noofdays: '',
+    reason: '',
+    status: ''
   }
 
-  addLeaves(){
-    this.loader=true;
+  addLeaves() {
+    this.loader = true;
     this.spinner.show();
-    this.leavesAdmin.creatingLeaves(this.Leaves).subscribe((res:any)=>{
-      this.loader=false;
+    this.leavesAdmin.creatingLeaves(this.Leaves).subscribe((res: any) => {
+      this.loader = false;
       console.log(res)
-      this.toaster.success("Added successfully","Message",{
-        timeOut:3000,
-       
-        progressBar:true,
-        progressAnimation:'increasing',
-      
-       
-      });
-    },(err:any)=>{
-      this.loader=false;
-      console.log(err)
-      this.toaster.error('Something went wrong',"Error",{
-        timeOut:1000,
-       
-        progressBar:true,
-        progressAnimation:'increasing',
-        
+      this.toaster.success("Added successfully", "Message", {
+        timeOut: 3000,
 
-       
+        progressBar: true,
+        progressAnimation: 'increasing',
+
+
+      });
+    }, (err: any) => {
+      this.loader = false;
+      console.log(err)
+      this.toaster.error('Something went wrong', "Error", {
+        timeOut: 1000,
+
+        progressBar: true,
+        progressAnimation: 'increasing',
+
+
+
       })
     })
   }

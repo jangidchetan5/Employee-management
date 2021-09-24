@@ -1,0 +1,68 @@
+<!-- NGX SPINNER  -->
+<ngx-spinner *ngIf="loader" type="square-jelly-box" size="large" color="white">
+</ngx-spinner>
+
+<div class='holidays'>
+  <h2>Timesheet</h2><button (click)='addingTodayWork()' mat-raised-button color="primary">Add Today Work</button>
+</div>
+
+
+<mat-form-field class="example-full-width filterInput" appearance="outline">
+  <mat-label>Filter Here...</mat-label>
+  <input matInput (keyup)='applyFilter($event)'>
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="employeename">
+      <th mat-header-cell *matHeaderCellDef> Employee Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.employeename}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.date | date}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <!-- <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef> Weight </th>
+      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    </ng-container> -->
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="projects">
+      <th mat-header-cell *matHeaderCellDef> Projects </th>
+      <td mat-cell *matCellDef="let element"> {{element.projects}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="assignedhours">
+      <th mat-header-cell *matHeaderCellDef> Assigned Hours </th>
+      <td mat-cell *matCellDef="let element"> {{element.assignedhours}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hours">
+      <th mat-header-cell *matHeaderCellDef> Hours </th>
+      <td mat-cell *matCellDef="let element"> {{element.hours}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Description </th>
+      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let element">  <mat-icon (click)='openDialog(element)' class='edit_icon'>edit</mat-icon> &nbsp; <mat-icon (click)='deletingTodayWork(element._id)' class='delete_icon'>delete</mat-icon> </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  

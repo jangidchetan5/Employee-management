@@ -1,0 +1,45 @@
+table {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  
+  .filterInput{
+    width:19% ;
+    margin: 5px auto !important;
+    position: relative;
+    left: 58px;
+  }
+
+  .holidays{
+    /* border: 2px solid red; */
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+
+  .holidays h2{
+    position: relative;
+    top: 7px;
+  }
+  
+
+  .edit_icon{
+    cursor: pointer;
+  }
+
+  .edit_icon:hover{
+    color: #1877f2;
+  }
+
+  .delete_icon{
+    cursor: pointer;
+  }
+
+  .delete_icon:hover{
+    color: red;
+  }

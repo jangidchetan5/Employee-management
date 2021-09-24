@@ -39,6 +39,9 @@ import { DesignationsComponent } from './components/sidebar/designations/designa
 import { AddDesignationsComponent } from './components/sidebar/designations/add-designations/add-designations.component';
 import { UpdateDesignationsComponent } from './components/sidebar/designations/update-designations/update-designations.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { TimesheetComponent } from './components/sidebar/timesheet/timesheet.component';
+import { AddtodayworkComponent } from './components/sidebar/timesheet/addtodaywork/addtodaywork.component';
+import { UpdatetodayworkComponent } from './components/sidebar/timesheet/updatetodaywork/updatetodaywork.component';
 
 @NgModule({
   declarations: [
@@ -60,9 +63,12 @@ import {MatExpansionModule} from '@angular/material/expansion';
     UpdateDepartmentComponent,
     DesignationsComponent,
     AddDesignationsComponent,
-    UpdateDesignationsComponent
+    UpdateDesignationsComponent,
+    TimesheetComponent,
+    AddtodayworkComponent,
+    UpdatetodayworkComponent
   ],
-  entryComponents:[UpdateDialogComponent,AddDialogComponent,HolidayDialogComponent,UpdateHolidayDialogComponent,UpdateLeavesAdminComponent,AddLeavesAdminComponent,AddDepartmentComponent,UpdateDepartmentComponent,AddDesignationsComponent,UpdateDesignationsComponent],
+  entryComponents:[UpdateDialogComponent,AddDialogComponent,HolidayDialogComponent,UpdateHolidayDialogComponent,UpdateLeavesAdminComponent,AddLeavesAdminComponent,AddDepartmentComponent,UpdateDepartmentComponent,AddDesignationsComponent,UpdateDesignationsComponent,AddtodayworkComponent,UpdatetodayworkComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

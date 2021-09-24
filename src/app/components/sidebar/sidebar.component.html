@@ -10,7 +10,7 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav opened='true' mode='side' style='width: 200px; background-color: rgb(206, 206, 209);'>
     <mat-nav-list>
-      <a class='logout_anchor' routerLinkActive="is-active" mat-list-item (click)='auth.logout()'>Logout &nbsp;&nbsp; <mat-icon>logout</mat-icon></a>
+    
       <mat-accordion>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
@@ -24,9 +24,11 @@
           <a mat-list-item routerLinkActive="is-active" routerLink="/dashboard/leavesadmin">Leaves Admin</a>
           <a mat-list-item routerLinkActive="is-active" routerLink="/dashboard/departments">Departments</a>
           <a mat-list-item routerLinkActive="is-active" routerLink="/dashboard/designations">Designations</a>
+          <a mat-list-item routerLinkActive="is-active" routerLink="/dashboard/timesheet">Timesheet</a>
 
         </mat-expansion-panel>
       </mat-accordion>
+      <a class='logout_anchor' routerLinkActive="is-active" mat-list-item (click)='auth.logout()'>Logout &nbsp;&nbsp; <mat-icon>logout</mat-icon></a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

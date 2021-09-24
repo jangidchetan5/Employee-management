@@ -6,6 +6,7 @@ import { EmployeeListComponent } from "./components/sidebar/employee-list/employ
 import { HolidaysComponent } from "./components/sidebar/holidays/holidays.component";
 import { LeavesAdminComponent } from "./components/sidebar/leaves-admin/leaves-admin.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
+import { TimesheetComponent } from "./components/sidebar/timesheet/timesheet.component";
 import { AuthGuard } from "./core/guards/auth.guard";
 import { LoginComponent } from "./pages/login/login.component";
 import { SignupComponent } from "./pages/signup/signup.component";
@@ -26,7 +27,8 @@ const routes: Routes = [
       {path:"holidays",component:HolidaysComponent},
       {path:"leavesadmin",component:LeavesAdminComponent},
       {path:'departments',component:DepartmentsComponent},
-      {path:'designations',component:DesignationsComponent}
+      {path:'designations',component:DesignationsComponent},
+      {path:'timesheet',component:TimesheetComponent}
     ],
   },
 ];
