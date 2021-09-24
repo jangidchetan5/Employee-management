@@ -1,18 +1,4 @@
- mat-expansion-panel{
-    background-color: rgb(206, 206, 209) !important;
 
-}
-
-
-
-.logout_anchor{
-    position: relative;
-    left: 8px;
-}
-
-a{
-    font-size: 15px !important;
-}
 
 .is-active{
     color: #1877f2;
@@ -20,3 +6,29 @@ a{
   
   
 }
+
+.logout_anchor{
+    position: relative;
+    left: 8px;
+}
+
+.logo{
+    font-family: 'Special Elite', cursive;
+    font-size: 48px;
+ 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    
+}
+
+.logo span{
+    position: relative;
+    top: 7px;
+}
+
+
+
+
