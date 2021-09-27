@@ -12,22 +12,6 @@
     left: 8px;
 }
 
-.logo{
-    font-family: 'Special Elite', cursive;
-    font-size: 48px;
- 
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    
-}
-
-.logo span{
-    position: relative;
-    top: 7px;
-}
 
 
 
