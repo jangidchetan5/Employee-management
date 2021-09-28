@@ -40,11 +40,11 @@ export class AuthService {
 
   }
 
-  adminAddingEmployee(employee11:any){
+  adminAddingEmployee(employee11:FormData){
     // let token=localStorage.getItem('token');
     // let headers = new HttpHeaders().set("authorization", 'Bearer ' + token);
    
-    return this.http.post(this.signUpUrl,employee11);
+    return this.http.post<any>(this.signUpUrl,employee11);
   }
 
   updatingEmployeeService(id:any,employee12345:any){

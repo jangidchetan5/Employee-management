@@ -1,90 +1,298 @@
 <!-- NGX SPINNER -->
-<ngx-spinner *ngIf="loader" type="square-jelly-box" size="large" color="white" >
-</ngx-spinner> 
-
+<ngx-spinner *ngIf="loader" type="square-jelly-box" size="large" color="white">
+</ngx-spinner>
 
 
 <form #myForm=ngForm>
-    <div class='main_div'>
-        <div class='commondiv'>
-            <mat-form-field appearance="outline">
-                <mat-label>firstName</mat-label>
-                <input matInput [(ngModel)]='employee1.firstName' type="text" name='firstName' required
-                    autocomplete="off">
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-                <mat-label>lastName</mat-label>
-                <input matInput [(ngModel)]='employee1.lastName' type="text" name='lastName' required
-                    autocomplete="off">
-            </mat-form-field>
-
-        </div>
-
-        <div class='commondiv'>
-            <mat-form-field appearance="outline">
-                <mat-label>phone</mat-label>
-                <input matInput [(ngModel)]='employee1.phone' type="tel" name='phone' required autocomplete="off">
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-                <mat-label>email</mat-label>
-                <input matInput [(ngModel)]='employee1.email' type="email" name='email' required autocomplete="off">
-            </mat-form-field>
-
-
-
-        </div>
-
-
-        <div class='commondiv'>
-
-            <mat-form-field appearance="outline">
-                <mat-label>areaofwork</mat-label>
-                <input matInput [(ngModel)]='employee1.areaOfWork' type="text" name='areaOfWork' required
-                    autocomplete="off">
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-                <mat-label>Select</mat-label>
-                <mat-select [(ngModel)]='employee1.role' name='role'>
-                    <mat-option value="user">user</mat-option>
-                    <mat-option value="admin">admin</mat-option>
-                </mat-select>
-            </mat-form-field>
-
-        </div>
-
-
-        <div class='commondiv'>
-            <mat-form-field appearance="outline">
-                <mat-label>password</mat-label>
-                <input matInput [(ngModel)]='employee1.password' type="text" name='password' required
-                    autocomplete="off">
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-                <mat-label>confirm password</mat-label>
-                <input matInput [(ngModel)]='employee1.confirmPassword' type="text" name='confirmPassword' required
-                    autocomplete="off">
-            </mat-form-field>
-
-
+    <div class="container container_custom">
+        <h2>Personal Info: </h2>
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>firstName</mat-label>
+                    <input matInput [(ngModel)]='employee1.firstName' type="text" name='firstName' required
+                        autocomplete="off">
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>lastName</mat-label>
+                    <input matInput [(ngModel)]='employee1.lastName' type="text" name='lastName' required
+                        autocomplete="off">
+                </mat-form-field>
+            </div>
         </div>
 
 
 
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>email</mat-label>
+                    <input matInput [(ngModel)]='employee1.email' type="email" name='email' required autocomplete="off">
+                </mat-form-field>
 
-        <div class=btngroup>
-            <button mat-raised-button mat-dialog-close color="warn">Close</button>
-            <button [disabled]="!myForm.valid" mat-raised-button color="primary" (click)='addingEmployee123()' mat-dialog-close>Add</button>
+            </div>
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>password</mat-label>
+                    <input matInput [(ngModel)]='employee1.password' type="password" name='password' required
+                        autocomplete="off">
+                </mat-form-field>
+            </div>
+        </div>
 
-            
 
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>confirm password</mat-label>
+                    <input matInput [(ngModel)]='employee1.confirmPassword' type="password" name='confirmPassword'
+                        required autocomplete="off">
+                </mat-form-field>
+
+            </div>
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Joining date</mat-label>
+                    <input matInput [matDatepicker]="picker1" [(ngModel)]='employee1.joiningdate' name='joiningdate'
+                        required>
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Phone</mat-label>
+                    <input matInput [(ngModel)]='employee1.phone' type="number" name='phone' required
+                        autocomplete="off">
+                </mat-form-field>
+
+            </div>
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Company</mat-label>
+                    <input matInput [(ngModel)]='employee1.company' type="text" name='company' required
+                        autocomplete="off">
+                </mat-form-field>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>department</mat-label>
+                    <input matInput [(ngModel)]='employee1.department' type="text" name='department' required
+                        autocomplete="off">
+                </mat-form-field>
+
+            </div>
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>designation</mat-label>
+                    <input matInput [(ngModel)]='employee1.designation' type="text" name='designation' required
+                        autocomplete="off">
+                </mat-form-field>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>birthday</mat-label>
+                    <input matInput [matDatepicker]="picker2" [(ngModel)]='employee1.birthday' name='birthday' required>
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+
+            </div>
+            <div class="col">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Gender</mat-label>
+                    <mat-select [(ngModel)]='employee1.gender' name='gender' required>
+                        <mat-option value="Male">Male</mat-option>
+                        <mat-option value="Female">Female</mat-option>
+
+                    </mat-select>
+                </mat-form-field>
+            </div>
         </div>
 
 
 
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Address</mat-label>
+                    <textarea matInput [(ngModel)]='employee1.address' type="text" name='address' required
+                        autocomplete="off"></textarea>
+                </mat-form-field>
+
+            </div>
+
+            <div class="col">
+                <input type="file" (change)="addingImg($event)"
+                    name='profile_image' required>
+            </div>
+
+        </div>
+
+        <h2>Bank details :</h2>
+
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>bank name</mat-label>
+                    <input matInput [(ngModel)]='employee1.bankname' type="text" name='bankname' required
+                        autocomplete="off">
+                </mat-form-field>
+
+            </div>
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>account number</mat-label>
+                    <input matInput [(ngModel)]='employee1.accountno' type="number" name='accountno' required
+                        autocomplete="off">
+                </mat-form-field>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>ifsc</mat-label>
+                    <input matInput [(ngModel)]='employee1.ifsc' type="text" name='ifsc' required autocomplete="off">
+                </mat-form-field>
+
+            </div>
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>pan</mat-label>
+                    <input matInput [(ngModel)]='employee1.pan' type="text" name='pan' required autocomplete="off">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <h2>Education Informations</h2>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>institution</mat-label>
+                    <input matInput [(ngModel)]='employee1.institution' type="text" name='institution' required
+                        autocomplete="off">
+                </mat-form-field>
+
+            </div>
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>stream</mat-label>
+                    <input matInput [(ngModel)]='employee1.stream' type="text" name='stream' required
+                        autocomplete="off">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>starting date</mat-label>
+                    <input matInput [matDatepicker]="picker3" [(ngModel)]='employee1.startingdate' name='startingdate'
+                        required>
+                    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                    <mat-datepicker #picker3></mat-datepicker>
+                </mat-form-field>
+
+            </div>
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>complete date</mat-label>
+                    <input matInput [matDatepicker]="picker4" [(ngModel)]='employee1.completedate' name='completedate'
+                        required>
+                    <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                    <mat-datepicker #picker4></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+
+
+
+        <h2>Experience: </h2>
+
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>pastcompanyname</mat-label>
+                    <input matInput [(ngModel)]='employee1.pastcompanyname' type="text" name='pastcompanyname' required
+                        autocomplete="off">
+                </mat-form-field>
+
+            </div>
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>location</mat-label>
+                    <input matInput [(ngModel)]='employee1.location' type="text" name='location' required
+                        autocomplete="off">
+                </mat-form-field>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>jobposition</mat-label>
+                    <input matInput [(ngModel)]='employee1.jobposition' type="text" name='jobposition' required
+                        autocomplete="off">
+                </mat-form-field>
+
+            </div>
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>from</mat-label>
+                    <input matInput [matDatepicker]="picker5" [(ngModel)]='employee1.pastCompanyFrom' name='pastCompanyFrom' required>
+                    <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+                    <mat-datepicker #picker5></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>to</mat-label>
+                    <input matInput [matDatepicker]="picker6" [(ngModel)]='employee1.pastCompanyTo' name='pastCompanyTo' required>
+                    <mat-datepicker-toggle matSuffix [for]="picker6"></mat-datepicker-toggle>
+                    <mat-datepicker #picker6></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+        </div>
+
+        <!-- Action -->
+        <div class="row">
+            <div class="col">
+                <button mat-raised-button mat-dialog-close color="warn">Close</button>
+
+            </div>
+            <div class="col">
+                <button [disabled]="!myForm.valid" (click)='addingEmployee123()' mat-raised-button color="primary"
+                    mat-dialog-close>Add</button>
+
+            </div>
+        </div>
 
     </div>
 </form>
