@@ -20,6 +20,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { EmployeeListComponent } from './components/sidebar/employee-list/employee-list.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
 import { UpdateDialogComponent } from './components/sidebar/employee-list/update-dialog/update-dialog.component';
 import { AddDialogComponent } from './components/sidebar/employee-list/add-dialog/add-dialog.component';
 import { MatSelectModule } from '@angular/material/select';
@@ -42,6 +43,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { TimesheetComponent } from './components/sidebar/timesheet/timesheet.component';
 import { AddtodayworkComponent } from './components/sidebar/timesheet/addtodaywork/addtodaywork.component';
 import { UpdatetodayworkComponent } from './components/sidebar/timesheet/updatetodaywork/updatetodaywork.component';
+import { ResetpasswordComponent } from './components/sidebar/resetpassword/resetpassword.component';
 
 @NgModule({
   declarations: [
@@ -66,9 +68,10 @@ import { UpdatetodayworkComponent } from './components/sidebar/timesheet/updatet
     UpdateDesignationsComponent,
     TimesheetComponent,
     AddtodayworkComponent,
-    UpdatetodayworkComponent
+    UpdatetodayworkComponent,
+    ResetpasswordComponent
   ],
-  entryComponents:[UpdateDialogComponent,AddDialogComponent,HolidayDialogComponent,UpdateHolidayDialogComponent,UpdateLeavesAdminComponent,AddLeavesAdminComponent,AddDepartmentComponent,UpdateDepartmentComponent,AddDesignationsComponent,UpdateDesignationsComponent,AddtodayworkComponent,UpdatetodayworkComponent],
+  entryComponents:[UpdateDialogComponent,AddDialogComponent,HolidayDialogComponent,UpdateHolidayDialogComponent,UpdateLeavesAdminComponent,AddLeavesAdminComponent,AddDepartmentComponent,UpdateDepartmentComponent,AddDesignationsComponent,UpdateDesignationsComponent,AddtodayworkComponent,UpdatetodayworkComponent,ResetpasswordComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -94,7 +97,8 @@ import { UpdatetodayworkComponent } from './components/sidebar/timesheet/updatet
     MatOptionModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatMenuModule
    
 
   ],

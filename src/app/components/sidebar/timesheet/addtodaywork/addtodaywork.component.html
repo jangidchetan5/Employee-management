@@ -9,7 +9,7 @@
             <mat-form-field appearance="outline">
                 <mat-label>Employee Name</mat-label>
                 <mat-select [(ngModel)]='Employee.employeename' name='employeename'>
-                    <mat-option value='{{item.firstName}}' *ngFor='let item of arr1'>{{item.firstName}}</mat-option>
+                    <mat-option value='{{item.firstName}} {{item.lastName}}' *ngFor='let item of arr1'>{{item.firstName}} {{item.lastName}}</mat-option>
 
                 </mat-select>
             </mat-form-field>

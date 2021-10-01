@@ -1,66 +1,23 @@
-.main_div{
-    border: 1px solid rgb(139, 139, 139);
-    width: 520px;
-    height:520px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+
+.container_custom{
+    height: 500px;
+    overflow-y: scroll;
 }
-
-mat-form-field{
-    width: 200px;
-    height: 25px;
-}
-
-
-.btngroup{
-    width: 200px;
-    height: 40px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-}
-/* 
-button{
-    width: 90px;
-    height: 25px;
-    border: none;
-    color: #fff;
-    border-radius: 5px;
-} */
-
-.updatebtn{
-    background-color: #1877f2;
-    transition: 1.5s all;
-}
-
 
 .closebtn{
-    background-color: rgb(253, 76, 76);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-
-/* button[disabled]{
-  background-color: rgb(226, 224, 224);
-} */
-
-.commondiv{
     /* border: 2px solid red; */
-    width: 450px;
-    height: 80px;
-    display: flex;
-    flex-direction: row;
-    align-items: center ;
-    justify-content: space-evenly ;
+    text-align: right;
 }
 
+
+.closebtn mat-icon{
+    position: relative;
+    bottom: 13px;
+}
+
+.closebtn mat-icon:hover{
+    color: red;
+}
 
 
 

@@ -42,6 +42,17 @@ table {
   color: red;
 }
 
+.image{
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  right: 5px;
+  /* border: 2px solid #1877f2; */
+}
+
+
 
 
 

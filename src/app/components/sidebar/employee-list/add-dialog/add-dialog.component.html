@@ -139,8 +139,7 @@
             </div>
 
             <div class="col">
-                <input type="file" (change)="addingImg($event)"
-                    name='profile_image' required>
+                <input type="file" (change)="addingImg($event)" name='profile_image' required>
             </div>
 
         </div>
@@ -261,7 +260,8 @@
             <div class="col">
                 <mat-form-field appearance="outline">
                     <mat-label>from</mat-label>
-                    <input matInput [matDatepicker]="picker5" [(ngModel)]='employee1.pastCompanyFrom' name='pastCompanyFrom' required>
+                    <input matInput [matDatepicker]="picker5" [(ngModel)]='employee1.pastCompanyFrom'
+                        name='pastCompanyFrom' required>
                     <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
                     <mat-datepicker #picker5></mat-datepicker>
                 </mat-form-field>
@@ -273,7 +273,8 @@
             <div class="col">
                 <mat-form-field appearance="outline">
                     <mat-label>to</mat-label>
-                    <input matInput [matDatepicker]="picker6" [(ngModel)]='employee1.pastCompanyTo' name='pastCompanyTo' required>
+                    <input matInput [matDatepicker]="picker6" [(ngModel)]='employee1.pastCompanyTo' name='pastCompanyTo'
+                        required>
                     <mat-datepicker-toggle matSuffix [for]="picker6"></mat-datepicker-toggle>
                     <mat-datepicker #picker6></mat-datepicker>
                 </mat-form-field>

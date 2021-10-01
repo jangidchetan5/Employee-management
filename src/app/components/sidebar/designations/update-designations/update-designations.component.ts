@@ -12,7 +12,7 @@ import { DesignationsService } from 'src/app/core/services/designations.service'
 })
 export class UpdateDesignationsComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private toaster: ToastrService, private spinner: NgxSpinnerService, private department: DepartmentService,private designation:DesignationsService) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private toaster: ToastrService, private spinner: NgxSpinnerService, private department: DepartmentService, private designation: DesignationsService) { }
 
   arr1: any = []
   ngOnInit(): void {
@@ -40,7 +40,6 @@ export class UpdateDesignationsComponent implements OnInit {
       console.log(res)
       this.toaster.success("Updated successfully", "Message", {
         timeOut: 3000,
-
         progressBar: true,
         progressAnimation: 'increasing',
 

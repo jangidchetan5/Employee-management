@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
       (res: any) => {
         this.loader = false;
         localStorage.setItem("token", res.token);
+        localStorage.setItem("id", res.id);
         this.route.navigate(["/dashboard/employeelist"]);
       },
       (err) => {

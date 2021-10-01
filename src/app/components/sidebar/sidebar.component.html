@@ -1,23 +1,42 @@
 <mat-toolbar color='primary'>
   <mat-toolbar-row>
-    <button mat-icon-button>
-      <mat-icon (click)='sidenav.toggle()'>menu</mat-icon>
-    </button>
-    <h1 style='margin-left: 10px;'>Dashboard</h1>
+
+    <div class="firstdiv">
+      <button mat-icon-button>
+        <mat-icon (click)='sidenav.toggle()'>menu</mat-icon>
+      </button>
+      <h1 style='margin-left: 10px;'>Dashboard</h1>
+
+    </div>
+
+    <div class="seconddiv">
+      <button mat-button [matMenuTriggerFor]="menu"><img class='admin' src="assets/img/admin.jpg" alt=""></button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>My Profile</button>
+      <button mat-menu-item (click)='openResetPasswordDialog()'>Reset Password</button>
+      <button mat-menu-item (click)='auth.logout()'> Logout</button>
+    </mat-menu>
+
+    </div>
+
+  
+
+    
+
   </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-sidenav-container>
   <mat-sidenav #sidenav opened='true' mode='side'>
     <mat-nav-list>
-   
-   
-    
+
+
+
       <mat-accordion>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title>
-            
+
               Employees
             </mat-panel-title>
           </mat-expansion-panel-header>
@@ -32,8 +51,8 @@
         </mat-expansion-panel>
       </mat-accordion>
 
-     
-      <a class='logout_anchor' routerLinkActive="is-active" mat-list-item (click)='auth.logout()'>Logout  </a>
+
+      <a class='logout_anchor' routerLinkActive="is-active" mat-list-item (click)='auth.logout()'>Logout </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

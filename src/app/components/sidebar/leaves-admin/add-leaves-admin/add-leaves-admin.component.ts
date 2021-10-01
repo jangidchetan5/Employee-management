@@ -18,7 +18,7 @@ export class AddLeavesAdminComponent implements OnInit {
 
   ngOnInit(): void {
     this.auth.getAllEmployeeService().subscribe((res: any) => {
-      console.log(res)
+      console.log('chetan_jangid_132',res)
       this.arr1 = res;
     }, (err: any) => {
       console.log(err)
